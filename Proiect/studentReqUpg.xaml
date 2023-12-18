@@ -1,0 +1,68 @@
+﻿<Window x:Class="Proiect.studentReqUpg"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proiect"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        Title="studentReqUpg" Height="500" Width="800">
+
+    <Grid MouseDown="Grid_MouseDown">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="/Images/exit2.png" Grid.Column="1" Panel.ZIndex="1" MouseDown="Image_MouseDown" Style="{StaticResource ImgClose}"/>
+        <Image Source="/Images/logout.png" Panel.ZIndex="1" MouseDown="Image_MouseDown_1" Style="{StaticResource ImgLogOut}" Margin="35,35,207,435"/>
+
+        <Border CornerRadius="25 0 0 100">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#3AA9AD" Offset="0"/>
+                    <GradientStop Color="#3AADA1" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <Canvas>
+                    <Polygon Points="0,20 230,140 0,270" Fill="#4EB1B6"/>
+                    <Polygon Points="100,400 200,370 180,470" Fill="#4EB1B6"/>
+                    <Ellipse Margin="250 450 0 0" Width="40" Height="40" Fill="#4EB1B6"/>
+                    <Ellipse Margin="50 400 0 0" Width="20" Height="40" Fill="#4EB1B6"/>
+                </Canvas>
+
+                <StackPanel VerticalAlignment="Center">
+                    <Button Style="{StaticResource menuButton}" Content="Home" Tag="/Images/menu.png" Click="Button_Click"/>
+                    <Button Style="{StaticResource menuButton}" Content="View All Courses" Tag="/Images/course.png" Click="Button_Click_1"/>
+                    <Button Style="{StaticResource menuButton}" Content="View Your Courses" Tag="/Images/viewCourses.png" Click="Button_Click_2"/>
+                    <Button Style="{StaticResource menuButton}" Content="Request Enroll" Tag="/Images/reqEnroll.png" Click="Button_Click_3"/>
+                    <Button Style="{StaticResource menuButton}" Content="Request Account Upgrade" Tag="/Images/reqUpgrade.png" Click="Button_Click_4"/>
+                </StackPanel>
+
+            </Grid>
+
+
+        </Border>
+
+        <Border Background="#ffffff" Grid.Column="1" CornerRadius="0 100 25 0">
+            <Grid>
+                <StackPanel Margin="0,50,0,0">
+                    <TextBlock Text="Welcome to the," Style="{StaticResource titleText}" Foreground="#3AB19B" HorizontalAlignment="Center" Height="54" Margin="128,0"/>
+                    <TextBlock Text="Request Upgrade page!" Style="{StaticResource titleText}" Foreground="#3AB19B" HorizontalAlignment="Center"/>
+                    <TextBlock Text="" Style="{StaticResource titleText}" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Here you can request an account upgrade!" Style="{StaticResource ResourceKey=normalText}" Foreground="#878787" HorizontalAlignment="Center"/>
+                </StackPanel>
+
+                <TextBlock HorizontalAlignment="Left" Height="23" Margin="100,300,0,0" TextWrapping="Wrap" Text="Select an upgrade:" Style="{StaticResource normalText}" Foreground="#878787" VerticalAlignment="Top" Width="145"/>
+                <ComboBox Name="upgr" Grid.Column="2" HorizontalAlignment="Left" Margin="250,300,0,0" VerticalAlignment="Top" Width="152" Height="23"/>
+                <Button Style="{StaticResource mainButton}" Content="Request" Click="Button_Click_5" Margin="262,355,131,90" Width="Auto" Panel.ZIndex="100"/>
+
+
+            </Grid>
+        </Border>
+
+
+
+    </Grid>
+</Window>
